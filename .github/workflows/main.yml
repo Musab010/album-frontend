@@ -34,4 +34,4 @@ jobs:
           aws-region: us-east-1
 
       - name: Deploy to S3
-        run: aws s3 sync build/ s3://cnsd-react-app-123456789012
+        run: aws s3 sync build/ s3://cnsd-react-app-673372960141
