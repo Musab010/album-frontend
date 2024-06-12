@@ -3,6 +3,7 @@ import AlbumDetail from './components/AlbumDetail';
 import CreateAlbum from './components/CreateAlbum';
 import NavBar from './components/Navbar';
 import useAlbums from './hooks/useAlbums';
+import Container from '@mui/material/Container';
 
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
