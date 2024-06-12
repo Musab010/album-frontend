@@ -1,8 +1,6 @@
 import { useParams } from "react-router-dom";
 import AlbumCard from "./AlbumCard";
 import useAlbum from "../hooks/useAlbum"
-import AlbumForm from "./AlbumForm";
-import { textAlign } from "@mui/system";
 
 function AlbumDetail() {
     const { id } = useParams();

@@ -4,9 +4,7 @@ import CreateAlbum from './components/CreateAlbum';
 import NavBar from './components/Navbar';
 import useAlbums from './hooks/useAlbums';
 
-import {BrowserRouter as Router, Link as RouterLink, Route, Routes} from 'react-router-dom';
-import {AppBar, Container, Toolbar, Link} from '@mui/material';
-
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 function App() {
 const albums = useAlbums();

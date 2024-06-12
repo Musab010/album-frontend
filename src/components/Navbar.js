@@ -1,5 +1,5 @@
-import {AppBar, Container, Toolbar, Link} from '@mui/material';
-import {BrowserRouter, Link as RouterLink, Route, Routes} from 'react-router-dom';
+import {AppBar, Toolbar, Link} from '@mui/material';
+import {Link as RouterLink} from 'react-router-dom';
 const Navbar = () => {
     return ( 
         <AppBar className='navbar'>

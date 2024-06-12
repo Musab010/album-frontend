@@ -4,9 +4,9 @@ import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
 function AlbumForm({ album, onSubmit }) {
-  const [ name, setName ] = useState('');
-  const [ artist, setArtist ] = useState('');
-  const [ imageUrl, setImageUrl ] = useState('');
+const [name] = useState(album ? album.name : "");
+const [artist] = useState(album ? album.artist : "");
+const [imageUrl] = useState(album ? album.imageUrl : "");
   const { handleSubmit, control, formState } = useForm({
     defaultValues: album
       ? album
