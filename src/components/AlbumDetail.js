@@ -1,41 +1,32 @@
-import { useParams } from "react-router-dom";
-import AlbumCard from "./AlbumCard";
-import useAlbum from "../hooks/useAlbum"
+import React from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import AlbumCard from './AlbumCard';
+import useAlbum from '../hooks/useAlbum';
 
 function AlbumDetail() {
-    const { id } = useParams();
-    const album = useAlbum(id);
-    return(
-        <div className="album-overview">
-            <h1>Gekozen Album</h1>
-            {album !== null ? ( 
-            <div> 
-                <AlbumCard
-                id={album.id}
-                name={album.name}
-                artist={album.artist}
-                imageUrl={album.imageUrl}
-                />
-                <br />
-                <h2>Details van het album:</h2>
-                <table style={{ width:"100%" ,border: "2px solid black" }}>
-                    <tr style={{ textAlign:"left" }}>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Artist</th>
-                    </tr>
-                    <tr>
-                        <td>{album.id}</td>
-                        <td>{album.name}</td>
-                        <td>{album.artist}</td>
-                    </tr>
-                </table>
-            </div> ) : 
-            ( <span>Oops! it didn't work!</span> )
-            
-        }
+  const { id } = useParams();
+  const album = useAlbum(id);
+  const navigate = useNavigate();
+
+  return (
+    <div className="album-detail">
+      <h1>Album Details</h1>
+      {album ? (
+        <div>
+          <AlbumCard
+            id={album.id}
+            name={album.name}
+            artist={album.artist}
+            imageUrl={album.imageUrl}
+          />
+          <button onClick={() => navigate(`/edit/${id}`)}>Edit Album</button>
+          {/* Voeg een button toe voor bewerken */}
         </div>
-    );
+      ) : (
+        <span>Album niet gevonden!</span>
+      )}
+    </div>
+  );
 }
 
 export default AlbumDetail;
